@@ -25,6 +25,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+gem 'jsonapi-serializers'
 gem 'poke-api-v2'
 
 group :development, :test do
@@ -32,6 +33,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 4.5.0', source: 'https://rubygems.org/'
+end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'webmock'
 end
 
 group :development do

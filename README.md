@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+Data importing by consuming third party API, store it in DB and serve the data over JSON REST API
 
-Things you may want to cover:
+## Installation
+```shell
+bundle install
+```
 
-* Ruby version
+```shell
+rake db:craete db:migrate
+```
 
-* System dependencies
+## Start project
+```shell
+bundle exec rails s -p <your_desired_port_number>
+```
 
-* Configuration
+## How to update Pokemon list
+List project specific tasks
+```shell
+rake -T | grep poke
+```
 
-* Database creation
+Update list
+```shell
+rake poke:import_data
+```
 
-* Database initialization
+## How to consume the API
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+curl <hostname>/pokemons
+```
+```shell
+curl <hostname>/pokemons/:id
+```
