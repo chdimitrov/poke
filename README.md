@@ -36,3 +36,6 @@ curl <hostname>/pokemons
 ```shell
 curl <hostname>/pokemons/:id
 ```
+
+## Heroku demo
+- link https://calm-beach-74048.herokuapp.com/pokemons
