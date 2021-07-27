@@ -6,7 +6,7 @@ class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.includes(:types).all.limit(50)
     response = JSONAPI::Serializer.serialize(@pokemons,
-                                             { fields: { pokemons: %i[name type] },
+                                             { fields: { pokemons: %i[name types] },
                                                is_collection: true })
     render json: response
   end
