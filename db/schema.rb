@@ -15,13 +15,16 @@ ActiveRecord::Schema.define(version: 2021_07_26_212812) do
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.integer "height"
+    t.integer "weight"
+    t.integer "base_experience"
+    t.boolean "is_default"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "types", force: :cascade do |t|
     t.string "name"
-    t.string "url"
+    t.integer "slot"
     t.integer "pokemon_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
