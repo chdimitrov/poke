@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PokemonSerializer
   include JSONAPI::Serializer
 
@@ -8,4 +10,8 @@ class PokemonSerializer
   attribute :is_default
 
   has_many :types, include_data: true
+
+  def format_name(attribute_name)
+    attribute_name.to_s.underscore
+  end
 end

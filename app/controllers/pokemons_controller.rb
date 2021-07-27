@@ -1,8 +1,13 @@
+# frozen_string_literal: true
+
 class PokemonsController < ApplicationController
   before_action :set_pokemon, only: [:show]
+
   def index
-    @pokemons = Pokemon.includes(:types).all.limit(5)
-    response = JSONAPI::Serializer.serialize(@pokemons,  {fields: {pokemons: [:name, :types]}, is_collection: true})
+    @pokemons = Pokemon.includes(:types).all.limit(50)
+    response = JSONAPI::Serializer.serialize(@pokemons,
+                                             { fields: { pokemons: %i[name type] },
+                                               is_collection: true })
     render json: response
   end
 
@@ -11,6 +16,7 @@ class PokemonsController < ApplicationController
   end
 
   private
+
   def set_pokemon
     @pokemon = Pokemon.find(params[:id])
   end
