@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Pokemons', type: :request do
   describe 'GET /index' do
-    let(:pokemon_1) { FactoryBot.create(:pokemon) }
+    let(:pokemon_one) { FactoryBot.create(:pokemon) }
     before do
-      pokemon_1
+      pokemon_one
     end
 
     it 'returns http success' do
@@ -33,9 +33,9 @@ RSpec.describe 'Pokemons', type: :request do
   end
 
   describe 'GET /show' do
-    let(:pokemon_2) { FactoryBot.create(:pokemon) }
+    let(:pokemon_two) { FactoryBot.create(:pokemon) }
     it 'returns http success' do
-      get "/pokemons/#{pokemon_2.id}"
+      get "/pokemons/#{pokemon_two.id}"
       expect(response).to have_http_status(:success)
       expect(response.header['Content-type']).to include('application/json')
 
