@@ -24,4 +24,8 @@ class PokemonsController < ApplicationController
   def pokemon_params
     params.fetch(:pokemon, {})
   end
+  
+  def test_to_delete
+    
+  end
 end
