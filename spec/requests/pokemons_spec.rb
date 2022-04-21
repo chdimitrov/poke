@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Pokemons', type: :request do
   describe 'GET /index' do
-    let(:pokemon_one) { FactoryBot.create(:pokemon) }
+    let(:pokemon_one_1) { FactoryBot.create(:pokemon) }
     before do
-      pokemon_one
+      pokemon_one_1
     end
 
     it 'returns http success' do
