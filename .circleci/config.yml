@@ -8,6 +8,7 @@ jobs:
       - image: cimg/ruby:2.6.6
     steps:
       - checkout
+      - run 'echo ''gem: --no-document'' > ~/.gemrc'
       - run: sudo apt-get update
       - run: sudo apt-get install sqlite3 libsqlite3-dev
       - run: bundle install
